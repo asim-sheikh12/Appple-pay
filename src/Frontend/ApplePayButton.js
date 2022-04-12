@@ -41,6 +41,7 @@ appleButton.addEventListener("click", function () {
   //This will contain the payment token
   applePaySession.onpaymentauthorised = function (event) {
     const applePaymentToken = event.payment.token;
+    console.log("Token>>>>>",event.payment.token)
     pay(applePaymentToken, function (outcome) {
       if (outcome) {
         applePaySession.completePayment(window.ApplePaySession.STATUS.SUCCESS);
